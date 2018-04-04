@@ -1,3 +1,5 @@
+const user = require('./modules/user/user.js');
+
 //app.js
 App({
   onLaunch: function () {
