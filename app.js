@@ -1,4 +1,5 @@
 const user = require('./modules/user/user.js');
+const HttpHelper = require('./helpers/http.js');
 
 //app.js
 App({
