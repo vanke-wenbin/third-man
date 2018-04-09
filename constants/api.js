@@ -1,3 +1,3 @@
 module.exports = {
-  LOGIN: '/login',
+  LOGIN: '/fd/api/sns/callback',
 };
