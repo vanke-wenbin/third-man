@@ -1,0 +1,9 @@
+/* button */
+button {}
+button[type=primary] {
+  color: #fff !important;
+  background-color: #eb5b58 !important;
+}
+button[type=primary]:active {
+  background-color: #cd4d4b !important;
+}

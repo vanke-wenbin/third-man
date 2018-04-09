@@ -20,5 +20,6 @@
     </list>
   </view>
   <view class="bottom-bar">
+    <button type="primary">立即修复</button>
   </view>
 </view>
