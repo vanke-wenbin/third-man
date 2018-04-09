@@ -1,7 +1,10 @@
 
 Component({
   properties: {
-    title: String
+    title: String,
+    subTitle: String,
+
+    buttonText: String,
   },
 
   data: {
@@ -9,5 +12,8 @@ Component({
   },
 
   methods: {
+    onTapButton: function() {
+      this.triggerEvent('buttonevent');
+    },
   }
 })

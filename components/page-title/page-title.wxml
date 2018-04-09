@@ -1,3 +1,17 @@
-<view class="page-title">
-  <text class="title">{{title}}</text>
+<view class="page-title-container">
+  <view class="page-title">
+    <text class="title">{{title}}</text>
+    <block wx:if="{{subTitle}}">
+      <text class="sub-title">{{subTitle}}</text>
+    </block>
+  </view>
+
+  <block wx:if="{{buttonText}}">
+    <button
+      class="button"
+      size="mini"
+      type="primary"
+      bindtap="onTapButton"
+    >{{buttonText}}</button>
+  </block>
 </view>

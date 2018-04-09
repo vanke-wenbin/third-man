@@ -1,4 +1,11 @@
 <view class="fixed-bottom-container">
-  <view class="content">content</view>
+  <view class="content">
+    <page-title
+      title="我的账单"
+      subTitle="当前账单房屋：金域华府 B209"
+      buttonText="其他房屋账单"
+      bind:buttonevent="onButtonTapped"
+    />
+  </view>
   <view class="bottom-bar">bottom</view>
 </view>
