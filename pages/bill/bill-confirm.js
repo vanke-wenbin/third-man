@@ -1,68 +1,20 @@
-// pages/bill/bill-confirm.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
     wx.setNavigationBarTitle({
       title: '',
     });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  onPay: function() {
+    wx.showModal({
+      title: '请确认缴费房屋信息',
+      content: '深圳金域华府五期三栋 30G',
+      showCancel: true,
+      cancelText: '需要帮助',
+      cancelColor: '#454545',
+      confirmText: '确认',
+      confirmColor: '#ef7c79',
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

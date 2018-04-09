@@ -1,9 +1,23 @@
 /* button */
-button {}
+button {
+  margin: 0;
+  font-size: 12pt;
+}
 button[type=primary] {
   color: #fff !important;
+  border-color: #eb5b58 !important;
   background-color: #eb5b58 !important;
 }
 button[type=primary]:active {
+  border-color: #cd4d4b !important;
   background-color: #cd4d4b !important;
+}
+
+button[type=primary]::before,
+button[type=primary]::after {
+  display: none;
+}
+
+button[disabled][type=primary] {
+  background-color: #faacab !important;
 }

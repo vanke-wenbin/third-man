@@ -1,0 +1,22 @@
+
+.bill-confirm {
+
+}
+.bill-confirm .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.bill-confirm .actions .text {
+  flex: 1;
+  color: #454545;
+  font-size: 11pt;
+}
+.bill-confirm .actions .amount {
+  font-weight: 600;
+}
+.bill-confirm .actions .button {
+  width: 280rpx;
+  margin-left: 20rpx;
+}

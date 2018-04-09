@@ -20,6 +20,15 @@
     </list>
   </view>
   <view class="bottom-bar">
-    <button type="primary">立即修复</button>
+    <view class="actions">
+      <view class="text">实付金额 
+        <text class="amount">¥2870.00</text>
+      </view>
+      <button
+        class="button"
+        type="primary"
+        bindtap="onPay"
+      >立即支付</button>
+    </view>
   </view>
 </view>
