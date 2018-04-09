@@ -1,6 +1,23 @@
 <view class="fixed-bottom-container bill-confirm">
   <view class="content">
     <page-title title="确认账单" />
+
+    <list>
+      <list-item
+        label="缴费房屋"
+        data="深圳金域华府五期三栋 30G"
+      />
+
+      <list-item
+        label="待缴账单"
+        data="2017年3月"
+      />
+    
+      <list-item
+        label="账单金额"
+        data="¥800.00"
+      />  
+    </list>
   </view>
   <view class="bottom-bar">
   </view>

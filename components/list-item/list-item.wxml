@@ -1,0 +1,4 @@
+<view class="list-item">
+  <text class="label">{{label}}</text>
+  <text class="data">{{data}}</text>
+</view>
