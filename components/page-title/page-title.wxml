@@ -8,7 +8,7 @@
 
   <block wx:if="{{buttonText}}">
     <button
-      class="button"
+      class="button reverse"
       size="mini"
       type="primary"
       bindtap="onTapButton"

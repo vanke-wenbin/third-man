@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 44rpx;
+  background-color: #fff;
   font-size: 11pt;
 }
 
@@ -10,6 +11,7 @@
   color: #454545;
   font-weight: 500;
 }
+
 .list-item .data {
   align-self: center;
   flex-basis: 70%;

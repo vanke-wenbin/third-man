@@ -36,3 +36,8 @@
   background-color: #fff !important;
   color: #eb5b58 !important;
 }
+.page-title-container .button:active {
+  border-color: #cd4d4b !important;
+  background-color: #fff !important;
+  color: #cd4d4b !important;
+}

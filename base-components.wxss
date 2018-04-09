@@ -1,7 +1,6 @@
 /* button */
 button {
   margin: 0;
-  font-size: 12pt;
 }
 button[type=primary] {
   color: #fff !important;
