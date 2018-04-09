@@ -1,0 +1,7 @@
+<view class="fixed-bottom-container bill-confirm">
+  <view class="content">
+    <page-title title="确认账单" />
+  </view>
+  <view class="bottom-bar">
+  </view>
+</view>

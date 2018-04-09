@@ -1,0 +1,10 @@
+.page-title {
+  width: 100%;
+  padding: 44rpx;
+  box-sizing: border-box;
+}
+
+.page-title .title {
+  font-size: 18pt;
+  font-weight: 500;
+}
