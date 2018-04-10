@@ -1,3 +1,4 @@
 <view class="list">
-  <slot />
+  <view wx:if="{{title}}" class="list-title">{{title}}</view>
+  <view class="list-content"><slot /></view>
 </view>

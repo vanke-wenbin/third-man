@@ -7,9 +7,11 @@ function encapsulateHeaders(headers) {
 }
 
 function handleSuccessCallback(data, statusCode, header) {
-  const { code, error, result, ...args } = data;
+
+  const { data: { code, error, result }, ...args } = data;
   const { success, fail } = this;
-  if (code === 0) {
+  const responseCode = this.responseCode || 0;
+  if (code === responseCode) {
     success && success(result, data);
   } else {
     fail && fail(error, data);
@@ -24,9 +26,10 @@ function request(options) {
   const {
     url,
     header,
+    success,
+    fail,
     ...restOptions,
   } = options;
-
   const nextOptions = Object.assign({}, {
     url: `${HOST}${url}`,
     success: handleSuccessCallback.bind(options),
