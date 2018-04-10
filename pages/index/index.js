@@ -50,5 +50,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+
+  onButtonTapped: function() {
+    console.log('onButtonTapped');
   }
 })
