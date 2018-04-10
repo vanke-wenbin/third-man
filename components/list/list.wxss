@@ -1,3 +1,14 @@
 .list {
+
+}
+
+.list-title {
+  padding-left: 20pt;
+  height: 36pt;
+  line-height: 36pt;
+}
+
+.list-content {
+  padding-left: 20pt;
   background-color: #fff;
 }
