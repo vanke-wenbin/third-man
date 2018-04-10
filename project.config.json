@@ -35,7 +35,7 @@
 				{
 					"id": -1,
 					"name": "确认账单",
-					"pathName": "pages/bill/bill-confirm"
+					"pathName": "pages/bill-list/bill-list"
 				}
 			]
 		}
