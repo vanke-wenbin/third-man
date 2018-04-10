@@ -11,6 +11,12 @@
       label="全部账单"
       data="去看看"
     />
+
+    <view class="line" />
+
+    <view class="bill-card">
+      <bill-card />
+    </view>
   </view>
   <view class="bottom-bar">
     <button

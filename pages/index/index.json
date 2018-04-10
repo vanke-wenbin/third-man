@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "page-title": "../../components/page-title/page-title",
-    "list-item": "../../components/list-item/list-item"
+    "list-item": "../../components/list-item/list-item",
+    "bill-card": "../../components/bill-card/bill-card"
   }
 }

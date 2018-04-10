@@ -3,7 +3,7 @@
   align-items: center;
 
   width: 100%;
-  padding: 44rpx;
+  padding: 40rpx;
   background-color: #fff;
   color: #454545;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
 }
 
 .page-title .title {
-  font-size: 18pt;
+  font-size: 20pt;
   font-weight: 600;
 }
 
@@ -28,13 +28,15 @@
 }
 
 .page-title-container .button {
-  height: 68rpx;
-  line-height: 66rpx;
+  height: auto;
+  line-height: 1;
   margin-left: 20rpx;
+  padding: 14rpx 32rpx;
   border: 1rpx solid #eb5b58 !important;
-  border-radius: 68rpx;
+  border-radius: 56rpx;
   background-color: #fff !important;
   color: #eb5b58 !important;
+  font-size: 10pt;
 }
 .page-title-container .button:active {
   border-color: #cd4d4b !important;

@@ -1,0 +1,65 @@
+
+.bill-card {
+  width: 100%;
+  padding: 32rpx 40rpx;
+  background-color: #b29574;
+  border-radius: 12rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.bill-card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 32rpx;
+  border-bottom: 1rpx solid #a3886a;
+  color: rgba(0, 0, 0, .3);
+  font-size: 24rpx;
+}
+
+.bill-card .label {
+}
+.bill-card .label .main-label {
+  margin-right: 32rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.bill-card .label .sub-label {}
+
+.bill-card .unit {}
+
+
+.data {
+  display: flex;
+  flex-direction: column;
+  color: #e8dfd5;
+}
+.data .value {
+  font-size: 36rpx;
+}
+.data .label {
+  font-size: 24rpx;
+}
+
+.current-data .data {
+  margin-top: 28rpx;
+  color: #fff;
+}
+.current-data .data .value {
+  font-size: 64rpx;
+}
+
+.total-data {
+  display: flex;
+  margin-top: 40rpx;
+}
+.total-data .data {
+  flex: 1;
+  padding-left: 40rpx;
+  border-left: 1rpx solid #a3886a;
+}
+.total-data .data:first-child {
+  padding: 0;
+  border-left: none;
+}

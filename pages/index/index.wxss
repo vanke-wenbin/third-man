@@ -4,3 +4,7 @@
   height: 1rpx;
   background-color: rgba(69, 69, 69, .1);
 }
+
+.bill-card {
+  padding: 40rpx;
+}
