@@ -16,6 +16,7 @@
   min-height: 100vh;
   padding-bottom: 150rpx;
   box-sizing: border-box;
+  background-color: #f9f9f9;
 }
 .fixed-bottom-container .content {
   position: relative;
