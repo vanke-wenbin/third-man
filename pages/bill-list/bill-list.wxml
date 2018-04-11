@@ -30,7 +30,12 @@
       </list>
     </view>
     <view wx:if="{{bills.length === 0}}">
-
+      <empty-list
+        text="暂无往期账单"
+      />
+    </view>
+    <view wx:else class="bill-list-no-more">
+      <text>- 没有更多记录了 -</text>
     </view>
   </view>
   <view class="bottom-bar">

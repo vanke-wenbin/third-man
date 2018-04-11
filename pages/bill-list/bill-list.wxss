@@ -12,10 +12,12 @@
   width: 40px;
 }
 
-.bill-list icon {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:100%;
+
+.bill-list-no-more {
+  width: 100%;
+  height: 52px;
+  line-height: 52px;
+  color: #a2a2a2;
+  text-align: center;
+  font-size: 12px;
 }

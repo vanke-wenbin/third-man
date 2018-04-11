@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "page-title": "../../components/page-title/page-title",
+    "empty-list": "../../components/empty-list/empty-list",
     "list": "../../components/list/list",
     "list-item": "../../components/list-item/list-item"
   }
