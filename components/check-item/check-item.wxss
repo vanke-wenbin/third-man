@@ -13,7 +13,6 @@
   width: 100%;
   height: 0.5px;
   background-color: #eaeaea;
-  transform: translateX(20px);
 }
 .check-item .checkbox {
   width: 20px;

@@ -1,8 +1,6 @@
 .bill-fee-item {
+  background-color: #fff;
   color: #454545;
-}
-
-.main-item {
 }
 
 
@@ -11,6 +9,32 @@
   justify-content: space-between;
   align-items: center;
 }
+.item .label {
+  font-size: 16px;
+}
+.item .data {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.item .data .amount {
+  font-size: 14px;
+  font-weight: 600;
+}
+.item .data .not-pay {
+  color: #ef7c79;
+  font-size: 10px;
+}
+
+
+.main-item {
+  padding-left: 20px;
+}
+.main-item .item {
+  padding: 20px 20px 20px 0;
+}
+
+
 
 .sub-item {
   padding-left: 40px;
@@ -31,21 +55,4 @@
   height: 0.5px;
   background-color: #eaeaea;
   transform: translateX(20px);
-}
-
-.item .label {
-  font-size: 16px;
-}
-.item .data {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-.item .data .amount {
-  font-size: 14px;
-  font-weight: 600;
-}
-.item .data .not-pay {
-  color: #ef7c79;
-  font-size: 10px;
 }
