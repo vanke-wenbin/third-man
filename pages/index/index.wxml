@@ -14,7 +14,7 @@
 
     <view class="line" />
 
-    <check-item />
+    <bill-fee-item />
 
     <view class="bill-card">
       <bill-card />

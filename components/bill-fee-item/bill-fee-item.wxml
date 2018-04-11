@@ -1,0 +1,9 @@
+<check-item>
+  <view class="bill-fee-item">
+    <text class="label">维修订单费</text>
+    <view class="data">
+      <text class="amount">¥ 274.73</text>
+      <text class="not-pay">待缴</text>
+    </view>
+  </view>
+</check-item>

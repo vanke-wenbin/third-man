@@ -4,6 +4,6 @@
     "list-item": "../../components/list-item/list-item",
     "bill-card": "../../components/bill-card/bill-card",
 
-    "check-item": "../../components/check-item/check-item"
+    "bill-fee-item": "../../components/bill-fee-item/bill-fee-item"
   }
 }

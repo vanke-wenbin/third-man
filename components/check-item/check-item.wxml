@@ -2,4 +2,7 @@
 
 <view class="check-item">
   <image class="checkbox" src="{{assets.getImagePath('icon_select.svg')}}"></image>
+  <view class="content">
+    <slot />
+  </view>
 </view>
