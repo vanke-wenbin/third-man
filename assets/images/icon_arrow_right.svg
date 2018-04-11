@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>btn_go_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btn_go_24">
+            <g id="更多">
+                <rect id="Rectangle-462" x="0" y="-3.55271368e-15" width="24" height="24"></rect>
+                <path d="M15.3378419,7.36859578 C15.5414117,7.18201085 15.5551807,6.86572793 15.3685958,6.6621581 C15.1820109,6.45858827 14.8657279,6.44481929 14.6621581,6.63140422 L8.6621581,12.1307927 C8.44596354,12.328949 8.44594467,12.6697665 8.66211727,12.8679468 L14.6621173,18.3685584 C14.8656664,18.5551658 15.1819509,18.5414319 15.3685584,18.3378827 C15.5551658,18.1343336 15.5414319,17.8180491 15.3378827,17.6314416 L9.73994639,12.4994294 L15.3378419,7.36859578 Z" id="Path-21" fill="#FFFFFF" fill-rule="nonzero" transform="translate(12.000001, 12.500000) scale(-1, 1) translate(-12.000001, -12.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

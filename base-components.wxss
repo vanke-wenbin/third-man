@@ -1,5 +1,8 @@
 /* button */
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
 button[type=primary] {
@@ -19,4 +22,10 @@ button[type=primary]::after {
 
 button[disabled][type=primary] {
   background-color: #c9c9c9 !important;
+}
+
+/* icon */
+.icon-md {
+  width: 24px;
+  height: 24px;
 }

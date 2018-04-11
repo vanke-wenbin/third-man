@@ -13,28 +13,39 @@
           wx:key="bill-list-item"
         >
           <view class="bill-list-item-icon">
-            <checkbox
-              checked="{{item.selected}}"
-              disabled="{{item.unpaid > 0}}"
+            <image
+              wx:if="{{item.unpaid > 0}}"
+              class="icon-md"
+              src="../../assets/images/icon_{{item.selected ? 'select' : 'unselect'}}.svg"
+              mode="scaleToFill"
             />
           </view>
           <list-item
             style="flex:1"
             label="{{item.mth}}月份账单"
             data="¥ {{item.expenses}}"
+            last="{{index === year.data.length - 1}}"
           />
           </view>
       </list>
+    </view>
+    <view wx:if="{{bills.length === 0}}">
+
     </view>
   </view>
   <view class="bottom-bar">
     <view class="actions">
       <button
-        class="button"
-        disabled="{{true}}"
         type="primary"
         bindtap="onPay"
-      >去缴费 ></button>
+      >
+        去缴费
+        <image
+          class="icon-md"
+          src="../../assets/images/icon_arrow_right.svg"
+          mode="scaleToFill"
+        />
+      </button>
     </view>
   </view>
 </view>
