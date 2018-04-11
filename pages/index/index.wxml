@@ -7,12 +7,14 @@
       bind:buttonevent="onButtonTapped"
     />
     <view class="line" />
-    <list-item
-      label="全部账单"
-      data="去看看"
-    />
+    <view class="all-bills">
+      <text class="label">全部账单</text>
+      <text class="text">去看看</text>
+    </view>
 
     <view class="line" />
+
+    <check-item />
 
     <view class="bill-card">
       <bill-card />

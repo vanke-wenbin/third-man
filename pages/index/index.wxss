@@ -8,3 +8,20 @@
 .bill-card {
   padding: 40rpx;
 }
+
+.all-bills {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+.all-bills .label {
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+.all-bills .text {
+  color: #909090;
+  font-size: 14px;
+}

@@ -1,0 +1,5 @@
+<wxs src="../../utils/assets.wxs" module="assets" />
+
+<view class="check-item">
+  <image class="checkbox" src="{{assets.getImagePath('icon_select.svg')}}"></image>
+</view>

@@ -30,11 +30,17 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "确认账单",
+					"pathName": "pages/bill/bill-confirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "全部账单",
 					"pathName": "pages/bill-list/bill-list",
 					"query": ""
 				}

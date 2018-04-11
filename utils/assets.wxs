@@ -1,0 +1,4 @@
+
+module.exports.getImagePath = function(fileName) {
+  return '/assets/images/' + fileName;
+};
