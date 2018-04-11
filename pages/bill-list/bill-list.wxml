@@ -8,25 +8,24 @@
     >
       <list title="{{year.title}}年">
         <view
-          class="bill-list-item"
           wx:for="{{year.data}}"
           wx:key="bill-list-item"
         >
-          <view class="bill-list-item-icon">
-            <image
-              wx:if="{{item.unpaid > 0}}"
-              class="icon-md"
-              src="../../assets/images/icon_{{item.selected ? 'select' : 'unselect'}}.svg"
-              mode="scaleToFill"
+          <check-item
+            select="{{item.selected}}"
+            disable="{{item.unpaid > 0}}"
+            checkBoxValue="{{item.mth}}"
+            bind:boxChange="boxChange"
+          >
+            <list-item
+              style="flex:1"
+              label="{{item.mth}}月份账单"
+              data="¥ {{item.expenses}}"
+              last="{{index === year.data.length - 1}}"
             />
-          </view>
-          <list-item
-            style="flex:1"
-            label="{{item.mth}}月份账单"
-            data="¥ {{item.expenses}}"
-            last="{{index === year.data.length - 1}}"
-          />
-          </view>
+          </check-item>
+        </view>
+
       </list>
     </view>
     <view wx:if="{{bills.length === 0}}">

@@ -1,10 +1,11 @@
-// components/check-item/check-item.js
+// components/bill-card/bill-card.js
 Component({
+  externalClasses: ['icon-md'],
   /**
    * 组件的属性列表
    */
   properties: {
-    checkBoxValue: {
+    value: {
       type: String,
       value: '',
     },
@@ -16,24 +17,27 @@ Component({
       type: Boolean,
       value: false,
     },
+    value: String,
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    boxChange: function(e) {
+    onTap: function(e) {
+      if (this.properties.disable) {
+        return;
+      }
       const eventDetail = {
-        value: e.detail.value,
+        value: e.currentTarget.dataset.value,
       } // detail对象，提供给事件监听函数
-      this.triggerEvent('boxChange', eventDetail);
+      this.triggerEvent('onChange', eventDetail);
     }
   }
 })

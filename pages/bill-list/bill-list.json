@@ -2,6 +2,7 @@
   "usingComponents": {
     "page-title": "../../components/page-title/page-title",
     "empty-list": "../../components/empty-list/empty-list",
+    "check-item": "../../components/check-item/check-item",
     "list": "../../components/list/list",
     "list-item": "../../components/list-item/list-item"
   }
