@@ -18,5 +18,5 @@ button[type=primary]::after {
 }
 
 button[disabled][type=primary] {
-  background-color: #faacab !important;
+  background-color: #c9c9c9 !important;
 }

@@ -1,10 +1,23 @@
 <view class="fixed-bottom-container bill-list">
   <view class="content">
     <page-title title="全部账单" style="background-color:#fff;"/>
-    <view wx:for="{{bills}}"  wx:for-item="year">
+    <view
+      wx:for="{{bills}}"
+      wx:for-item="year"
+      wx:key="bill-list"
+    >
       <list title="{{year.title}}年">
-        <view class="bill-list-item" wx:for="{{year.data}}">
-          <icon type="success" style="vertical:center"/>
+        <view
+          class="bill-list-item"
+          wx:for="{{year.data}}"
+          wx:key="bill-list-item"
+        >
+          <view class="bill-list-item-icon">
+            <checkbox
+              checked="{{item.selected}}"
+              disabled="{{item.unpaid > 0}}"
+            />
+          </view>
           <list-item
             style="flex:1"
             label="{{item.mth}}月份账单"
@@ -16,14 +29,12 @@
   </view>
   <view class="bottom-bar">
     <view class="actions">
-      <view class="text">实付金额
-        <text class="amount">¥2870.00</text>
-      </view>
       <button
         class="button"
+        disabled="{{true}}"
         type="primary"
         bindtap="onPay"
-      >立即支付</button>
+      >去缴费 ></button>
     </view>
   </view>
 </view>

@@ -1,6 +1,21 @@
+.bill-list {
+  padding-bottom: 72px;
+}
 
 .bill-list-item {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items:center;
+}
+
+.bill-list-item-icon {
+  width: 40px;
+}
+
+.bill-list icon {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
 }

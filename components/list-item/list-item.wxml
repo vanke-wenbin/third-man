@@ -1,4 +1,4 @@
-<view class="list-item">
+<view class="{{last ? 'list-item list-item-last' : 'list-item'}}">
   <text class="label">{{label}}</text>
   <text class="data">{{data}}</text>
 </view>
