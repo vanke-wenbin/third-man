@@ -1,12 +1,12 @@
 <view class="empty-list">
-  <view class="empty-main">
+  <view class="empty-list-main">
     <image
-      class="empty-main-icon"
+      class="empty-list-main-icon"
       src="../../assets/images/icon_empty_currency.png"
       mode="scaleToFill"
       binderror=""
       bindload=""
     />
-    <text wx:if="{{text}}" class="empty-main-text" >{{text}}</text>
+    <text wx:if="{{text}}" class="empty-list-main-text" >{{text}}</text>
   </view>
 </view>
