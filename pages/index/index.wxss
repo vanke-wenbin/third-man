@@ -5,8 +5,14 @@
   background-color: rgba(69, 69, 69, .1);
 }
 
+
+.bill-detail {
+  margin-top: 20px;
+}
+
 .bill-card {
-  padding: 40rpx;
+  padding: 20px 20px 0;
+  background-color: #fff;
 }
 
 .all-bills {

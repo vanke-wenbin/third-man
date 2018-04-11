@@ -12,12 +12,14 @@
       <text class="text">去看看</text>
     </view>
 
-    <view class="line" />
+    <view class="bill-detail">
+      <view class="bill-card">
+        <bill-card />
+      </view>
 
-    <bill-fee-item />
-
-    <view class="bill-card">
-      <bill-card />
+      <bill-fee-list>
+        <bill-fee-item />
+      </bill-fee-list>
     </view>
   </view>
   <view class="bottom-bar">

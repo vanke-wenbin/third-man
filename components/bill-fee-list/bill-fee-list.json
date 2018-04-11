@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bill-fee-item": "../bill-fee-item/bill-fee-item"
+  }
+}
