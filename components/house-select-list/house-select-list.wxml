@@ -1,0 +1,7 @@
+<view class="house-select-list">
+  <house-select-item
+    wx:for="{{data}}"
+    wx:key="{{item}}"
+    data="{{item}}"
+  />
+</view>

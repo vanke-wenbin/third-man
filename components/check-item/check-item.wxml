@@ -1,5 +1,3 @@
-<wxs src="../../utils/assets.wxs" module="assets" />
-
 <view class="check-item">
   <check-box
     disable="{{disable}}"

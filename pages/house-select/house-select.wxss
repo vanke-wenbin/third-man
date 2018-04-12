@@ -1,0 +1,4 @@
+.house-select-main {
+  flex: 1;
+  background-color: #fff;
+}

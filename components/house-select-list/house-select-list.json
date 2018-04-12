@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "house-select-item": "../house-select-item/house-select-item"
+  }
+}

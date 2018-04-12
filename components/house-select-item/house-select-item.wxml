@@ -1,0 +1,42 @@
+<wxs module="identity">
+var identityCfg = {
+  '0': {
+    className: 'identity-owner',
+    title: '业主'
+  },
+  '1': {
+    className: 'identity-family',
+    title: '家属'
+  },
+  '2': {
+    className: 'identity-tenant',
+    title: '租户'
+  }
+};
+
+module.exports.getTitle = function(identity) {
+  return identityCfg[identity] && identityCfg[identity].title;
+}
+module.exports.getClassName = function(identity) {
+  return identityCfg[identity] && identityCfg[identity].className;
+}
+</wxs>
+
+
+<view class="house-select-item">
+  <view class="left">
+    <view
+      class="identity {{identity.getClassName(data.identity)}}"
+    >
+      {{identity.getTitle(data.identity)}}
+    </view>
+    <view class="name">
+      <text class="project-name">{{data.project_name}}</text>
+      <text class="building-name">{{data.building_name}}</text>
+    </view>
+  </view>
+  <view class="right">
+    <text wx:if="{{data.is_main}}">当前</text>
+    <icon-custom name="arrow_grey_right" size="14" wx:else/>
+  </view>
+</view>

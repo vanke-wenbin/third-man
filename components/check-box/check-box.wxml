@@ -14,7 +14,5 @@ module.exports.getName = function(select, disable) {
   <icon-custom
     name="{{name.getName(select, disable)}}"
     class="check-box-icon"
-
-    mode="scaleToFill"
   />
 </view>

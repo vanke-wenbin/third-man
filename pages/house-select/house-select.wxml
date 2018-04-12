@@ -1,0 +1,6 @@
+<view class="container house-select">
+  <view class="content">
+    <page-title title="其他房屋" style="background-color:#fff;"/>
+    <house-select-list data="{{houses}}" class="house-select-main"/>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "page-title": "../../components/page-title/page-title",
+    "house-select-list": "../../components/house-select-list/house-select-list",
+    "icon-custom": "../../components/icon-custom/icon-custom"
+  }
+}
