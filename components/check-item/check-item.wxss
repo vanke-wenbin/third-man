@@ -1,7 +1,18 @@
 .check-item {
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #fff;
+}
+.check-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.5px;
+  background-color: #eaeaea;
 }
 .check-item .checkbox {
   width: 20px;

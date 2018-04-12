@@ -1,0 +1,12 @@
+<view class="bill-fee-list">
+  <view class="list">
+    <bill-fee-item
+      wx:for="{{data}}"
+      wx:key="{{item}}"
+      data="{{item}}"
+    />
+  </view>
+  <view class="list-footer">
+    <text class="text">- 没有更多记录了 -</text>
+  </view>
+</view>

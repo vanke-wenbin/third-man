@@ -1,23 +1,26 @@
-// components/bill-fee-item/bill-fee-item.js
 Component({
-  /**
-   * 组件的属性列表
-   */
+  relations: {
+    '../bill-fee-list/bill-fee-list': {
+      type: 'parent',
+      linked: function(target) {
+        console.log('item linked', target);
+      },
+    },
+  },
   properties: {
-
+    checked: Boolean,
+    data: Object,
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    onItemTapped: function() {
+      console.log(123);
+      this.setData({
+        checked: true,
+      })
+    }
   }
 })
