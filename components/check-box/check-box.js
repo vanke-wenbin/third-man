@@ -13,11 +13,10 @@ Component({
       type: Boolean,
       value: false,
     },
-    select: {
+    checked: {
       type: Boolean,
       value: false,
-    },
-    value: String,
+    }
   },
 
   /**

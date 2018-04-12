@@ -1,7 +1,7 @@
 <view class="check-item">
   <check-box
     disable="{{disable}}"
-    select="{{select}}"
+    checked="{{select}}"
     value="{{checkBoxValue}}"
     bind:onChange="boxChange"
   />
