@@ -1,0 +1,19 @@
+<view class="fixed-bottom-container">
+  <view class="content">
+    <page-title
+      title="我的账单"
+      subTitle="还未绑定房屋"
+    />
+    <view class="main">
+      <view class="notice">
+        <view>你的账号还没有绑定好的房屋，</view>
+        <view>需要绑定后才能使用哦。</view>
+      </view>
+      <view class="guide">
+        <view>如何绑定？</view>
+        <view>1，下载住这儿APP</view>
+        <view>2，登录后根据提示绑定房屋</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -40,8 +40,8 @@
 				},
 				{
 					"id": -1,
-					"name": "全部账单",
-					"pathName": "pages/bill-list/bill-list",
+					"name": "未绑定",
+					"pathName": "pages/unbound/unbound",
 					"query": ""
 				}
 			]
