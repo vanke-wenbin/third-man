@@ -37,7 +37,7 @@
       <text>- 没有更多记录了 -</text>
     </view>
   </view>
-  <view class="bottom-bar">
+  <view class="bottom-bar" wx:if="{{bills.length !== 0}}">
     <view class="actions">
       <button
         type="primary"

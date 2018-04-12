@@ -2,7 +2,7 @@
   <view class="empty-list-main">
     <image
       class="empty-list-main-icon"
-      src="../../assets/images/icon_empty_currency.png"
+      src="../../assets/images/empty_currency.png"
       mode="scaleToFill"
       binderror=""
       bindload=""
