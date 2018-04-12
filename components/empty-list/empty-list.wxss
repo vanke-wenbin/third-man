@@ -1,9 +1,11 @@
 .empty-list {
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: #fff;
 }
 .empty-list-main {
   display: flex;
@@ -12,8 +14,8 @@
   align-items: center;
 }
 .empty-list-main-icon {
-  width: 134.2px;
-  height: 134.2px;
+  width: 145px;
+  height: 145px;
 }
 
 .empty-list-main-text {

@@ -1,5 +1,4 @@
 .bill-list {
-  padding-bottom: 72px;
 }
 
 .bill-list-item {

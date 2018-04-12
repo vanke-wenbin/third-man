@@ -1,4 +1,6 @@
-<view class="fixed-bottom-container bill-list">
+<view
+  class="bill-list {{bills.length !== 0 ? 'fixed-bottom-container' : 'container'}}"
+>
   <view class="content">
     <page-title title="全部账单" style="background-color:#fff;"/>
     <view
@@ -28,9 +30,10 @@
 
       </list>
     </view>
-    <view wx:if="{{bills.length === 0}}" style="flex:1">
+    <view wx:if="{{bills.length === 0}}" style="display: flex;flex: 1">
       <empty-list
         text="暂无往期账单"
+        style="flex: 1"
       />
     </view>
     <view wx:else class="bill-list-no-more">
