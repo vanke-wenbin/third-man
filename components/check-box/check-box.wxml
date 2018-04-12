@@ -1,21 +1,20 @@
 
-<wxs module="path">
-var assets = require("../../utils/assets.wxs");
-
-module.exports.getSrc = function(select, disable) {
+<wxs module="name">
+module.exports.getName = function(select, disable) {
   if (disable) {
-    return assets.getImagePath('icon_select_disable.svg');
+    return 'select_disable';
   }
   if (select) {
-    return assets.getImagePath('icon_select.svg');
+    return 'select';
   }
-  return assets.getImagePath('icon_unselect.svg');
+  return 'unselect';
 };
 </wxs>
 <view class="check-box" bindtap="onTap" data-value="{{value}}">
-  <image
+  <icon-custom
+    name="{{name.getName(select, disable)}}"
     class="check-box-icon"
-    src="{{path.getSrc(select, disable)}}"
+
     mode="scaleToFill"
   />
 </view>

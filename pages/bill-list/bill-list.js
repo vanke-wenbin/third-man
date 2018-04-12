@@ -82,6 +82,6 @@ Page({
     });
   },
   boxChange: function(e,ew) {
-    console.log(e.detail.value); 
+    console.log(e.detail.value);
   }
 })

@@ -4,6 +4,7 @@
     "empty-list": "../../components/empty-list/empty-list",
     "check-item": "../../components/check-item/check-item",
     "list": "../../components/list/list",
-    "list-item": "../../components/list-item/list-item"
+    "list-item": "../../components/list-item/list-item",
+    "icon-custom": "../../components/icon-custom/icon-custom"
   }
 }

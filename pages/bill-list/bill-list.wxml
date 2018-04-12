@@ -28,7 +28,7 @@
 
       </list>
     </view>
-    <view wx:if="{{bills.length === 0}}">
+    <view wx:if="{{bills.length === 0}}" style="flex:1">
       <empty-list
         text="暂无往期账单"
       />
@@ -44,10 +44,9 @@
         bindtap="onPay"
       >
         去缴费
-        <image
-          class="icon-md"
-          src="../../assets/images/icon_arrow_right.svg"
-          mode="scaleToFill"
+        <icon-custom
+          style="display:flex;"
+          name="arrow_right"
         />
       </button>
     </view>
