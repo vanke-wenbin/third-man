@@ -3,6 +3,7 @@
     "page-title": "../../components/page-title/page-title",
     "list-item": "../../components/list-item/list-item",
     "bill-card": "../../components/bill-card/bill-card",
+    "empty-list": "../../components/empty-list/empty-list",
     "bill-fee-list": "../../components/bill-fee-list/bill-fee-list",
     "bill-fee-item": "../../components/bill-fee-item/bill-fee-item"
   }

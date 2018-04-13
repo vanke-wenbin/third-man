@@ -1,4 +1,4 @@
-<view class="fixed-bottom-container">
+<view class="{{empty ? 'container' : 'fixed-bottom-container'}}">
   <view class="content">
     <page-title
       title="我的账单"
@@ -6,13 +6,19 @@
       buttonText="其他房屋账单"
       bind:buttonevent="onButtonTapped"
     />
-    <view class="line" />
-    <view class="all-bills">
+    <view wx:if="{{empty}}" style="display: flex;flex: 1">
+      <empty-list
+        text="暂无账单"
+        style="flex: 1"
+      />
+    </view>
+    <view class="line" wx:if="{{!empty}}"/>
+    <view class="all-bills" wx:if="{{!empty}}">
       <text class="label">全部账单</text>
       <text class="text">去看看</text>
     </view>
 
-    <view class="bill-detail">
+    <view class="bill-detail" wx:if="{{!empty}}">
       <view class="bill-card">
         <bill-card />
       </view>
@@ -22,7 +28,7 @@
       </bill-fee-list>
     </view>
   </view>
-  <view class="bottom-bar">
+  <view class="bottom-bar" wx:if="{{!empty}}">
     <button
       type="primary"
     >
