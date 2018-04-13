@@ -8,18 +8,31 @@ function encapsulateHeaders(headers) {
 
 function handleSuccessCallback(data, statusCode, header) {
 
-  const { data: { code, error, result }, ...args } = data;
+  const { data: { code, error, result, message }, ...args } = data;
   const { success, fail } = this;
   const responseCode = this.responseCode || 0;
   if (code === responseCode) {
     success && success(result, data);
   } else {
-    fail && fail(error, data);
+    wx.showToast({
+      title: message|| '请求失败',
+      icon: 'none',
+      duration: 2000
+    });
+    fail && fail({error, result, message}, data);
   }
 }
 
 function handleFailCallback(resp) {
   this.fail && this.fail(resp);
+}
+
+function handleCompleteCallback() {
+  wx.hideLoading();
+  const { complete } = this;
+  if (this.complete) {
+    this.complete();
+  }
 }
 
 function request(options) {
@@ -28,12 +41,14 @@ function request(options) {
     header,
     success,
     fail,
+    complete,
     ...restOptions,
   } = options;
   const nextOptions = Object.assign({}, {
     url: `${HOST}${url}`,
     success: handleSuccessCallback.bind(options),
     fail: handleFailCallback.bind(options),
+    complete: handleCompleteCallback.bind(options),
     ...restOptions,
   });
 
