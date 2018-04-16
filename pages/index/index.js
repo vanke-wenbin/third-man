@@ -42,6 +42,7 @@ Page({
 
 
   onReady() {
+
     this.getMthBills();
     this.getHouseList();
     this.getPastBills();
@@ -67,6 +68,8 @@ Page({
       },
       fail: err => {
         console.log('fail', err);
+      },
+      complete(){
       }
     });
   },
@@ -111,11 +114,13 @@ Page({
           if (bill.order_id === 0) {
             return {
               billName: '物业服务费',
+              isSelected: false,
               ...bill,
             }
           } else {
             return {
-              billName: bill.costs[0].expenseName,
+              billName: bill.costs[0] && bill.costs[0].expenseName,
+              isSelected: false,
               ...bill,
             }
           }
@@ -128,7 +133,19 @@ Page({
       }
     });
   },
-
+  onBillItemClick(e) {
+    const { detail: { id }} = e;
+    const newBills = this.data.bills.map(bill => {
+      if (bill.order_id === id) {
+        return {
+          ...bill,
+          isSelected: !bill.isSelected,
+        }
+      }
+      return bill;
+    });
+    this.setData({ bills: newBills });
+  },
   onButtonTapped: function() {
     console.log('onButtonTapped');
   }

@@ -46,9 +46,7 @@ module.exports.getMonth = function(mth) {
         />
       </view>
 
-      <bill-fee-list data="{{bills}}">
-        <bill-fee-item />
-      </bill-fee-list>
+      <bill-fee-list data="{{bills}}" bind:onItemClick="onBillItemClick"/>
     </view>
   </view>
   <view class="bottom-bar" wx:if="{{!empty}}">

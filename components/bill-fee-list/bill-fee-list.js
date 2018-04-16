@@ -20,29 +20,12 @@ Component({
   },
 
   data: {
-    // data: [
-    //   {
-    //     name: '维修订单费',
-    //     amount: '130.53',
-    //     isPaid: false,
-    //   },
-    //   {
-    //     name: '维修订单费',
-    //     details: [
-    //       {
-    //         name: '日常物业服务费',
-    //         amount: '88.88',
-    //       },
-    //       {
-    //         name: '高层物业服务费',
-    //         amount: '32.00',
-    //       },
-    //     ],
-    //   }
-    // ],
   },
 
   methods: {
+    handleItemClick(e) {
+      this.triggerEvent('onItemClick', { id: e.detail.id });
+    }
   },
 
   ready: function() {

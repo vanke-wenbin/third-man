@@ -56,3 +56,10 @@
   background-color: #eaeaea;
   transform: translateX(20px);
 }
+
+.bill-fee-item-paid .main-item,
+.bill-fee-item-paid .item .not-pay,
+.sub-item .item-paid,
+.bill-fee-item-paid .sub-item {
+  color: #c9c9c9;
+}

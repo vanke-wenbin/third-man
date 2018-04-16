@@ -4,6 +4,7 @@
       wx:for="{{data}}"
       wx:key="{{item}}"
       data="{{item}}"
+      bind:onItemClick="handleItemClick"
     />
   </view>
   <view class="list-footer">

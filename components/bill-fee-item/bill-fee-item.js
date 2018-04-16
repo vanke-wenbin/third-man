@@ -8,7 +8,6 @@ Component({
     },
   },
   properties: {
-    checked: Boolean,
     data: Object,
   },
 
@@ -17,10 +16,14 @@ Component({
 
   methods: {
     onItemTapped: function() {
-      console.log(123);
-      this.setData({
-        checked: true,
-      })
+      if (!this.properties.data.totalUnpaid) {
+        return;
+      }
+
+      const eventDetail = {
+        id: this.properties.data.order_id,
+      }
+      this.triggerEvent('onItemClick', eventDetail);
     }
   }
 })

@@ -1,12 +1,15 @@
-<view class="bill-fee-item">
+<view class="{{'bill-fee-item ' + (data.totalUnpaid === 0 ? 'bill-fee-item-paid' : '')}}">
   <view class="main-item">
-    <check-item>
+      <check-item
+        select="{{data.isSelected}}"
+        disable="{{!data.totalUnpaid}}"
+      >
       <view class="item" bindtap="onItemTapped">
         <text class="label">{{data.billName}}</text>
-        <block wx:if="{{!data.costs && data.totalUnpaid}}">
+        <block wx:if="{{data.costs.length === 0}}">
           <view class="data">
-            <text class="amount">¥ {{data.totalUnpaid}}</text>
-            <block wx:if="{{!data.isPaid}}">
+            <text class="amount">¥ {{data.totalUnpaid || data.totalExpenses}}</text>
+            <block wx:if="{{data.totalUnpaid}}">
               <text class="not-pay">待缴</text>
             </block>
           </view>
@@ -21,11 +24,11 @@
       wx:key="{{detail.name}}"
       class="sub-item"
     >
-      <view class="item" bindtap="onItemTapped">
+      <view class="{{'item ' + (detail.unpaid === 0 ? 'item-paid' : '')}}" bindtap="onItemTapped">
         <text class="label">· {{detail.expenseName}}</text>
         <view class="data">
-          <text class="amount">¥ {{detail.unpaid}}</text>
-          <text class="not-pay">待缴</text>
+          <text class="amount">¥ {{detail.unpaid || detail.expenses}}</text>
+          <text class="not-pay" wx:if="{{detail.unpaid}}">待缴</text>
         </view>
       </view>
     </view>

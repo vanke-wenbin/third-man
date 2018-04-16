@@ -12,7 +12,7 @@ module.exports.getName = function(select, disable) {
 </wxs>
 <view class="check-box" bindtap="onTap" data-value="{{value}}">
   <icon-custom
-    name="{{name.getName(select, disable)}}"
+    name="{{name.getName(checked, disable)}}"
     class="check-box-icon"
   />
 </view>
