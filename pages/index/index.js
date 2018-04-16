@@ -1,58 +1,100 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const timeUtils = require('../../utils/time');
+const UrlUtils = require('../../utils/url.js');
+const HttpHelper = require('../../helpers/http.js');
+const api = require('../../constants/api');
+const STATUS = require('../../constants/status');
 
 Page({
   data: {
-    empty: true,
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    empty: false,
+    loading: STATUS.DEFAULT,
+    mth: timeUtils.formatTimestamp(Date.now(), 'YYYY-MM'),
+    date: 0,
+    totalUnpaid:0,
+    totalExpenses:0,
+    totalPaid:0,
+    costs: [],
+    houseName: '',
+
   },
 
+  onLoad: function (option) {
+    if (option.mth) {
+      const [year, month] = option.mth.split('-');
+      this.setData({
+        mth: option.mth,
+        date: new Date(year, month, 0).getDate(),
+      });
+    } else {
+      const [year, month] = this.data.mth.split('-');
+      this.setData({
+        date: new Date(year, month, 0).getDate(),
+      });
+    }
+
+  },
+
+
+  onReady() {
+    this.getMthBills();
+    this.getHouseList();
+    this.getPastBills();
+  },
+
+  getPastBills() {
+    const nowDate = timeUtils.formatTimestamp(Date.now(), 'YYYY-MM');
+
+    const url = UrlUtils.getUrlWithQs(api.BILLS_LIST, {
+      arrears_only: 0,
+      end_date: nowDate,
+      begin_date: timeUtils.formatTimestamp(Date.now(), 'YYYY-MM'),
+    });
+
+    HttpHelper.get({
+      url,
+      success: data => {
+        console.log('success', data);
+      },
+      fail: err => {
+        console.log('fail', err);
+      }
+    });
+  },
+
+  getHouseList() {
+    HttpHelper.get({
+      url: api.HOUSE_LIST,
+      success: data => {
+        const mainHouse = data.filter(house => house.is_main);
+        const houseName = mainHouse[0].name;
+        this.setData({ houseName });
+      },
+    });
+  },
+
+  getMthBills() {
+    const url = UrlUtils.getUrlWithQs(api.BILLS_LIST, {
+      arrears_only: 0,
+      end_date: this.mth,
+      begin_date: this.mth,
+    });
+
+    HttpHelper.get({
+      url,
+      success: data => {
+        const { costs, totalUnpaid, totalExpenses } = data.bis[0];
+        const totalPaid = costs.reduce((total, v) => total + v.paid, 0);
+        // this.setData
+        console.log(totalUnpaid, totalExpenses, totalPaid);
+        this.setData({totalUnpaid, totalExpenses, totalPaid})
+      },
+      fail: err => {
+        console.log('fail', err);
+      }
+    });
+  },
 
   onButtonTapped: function() {
     console.log('onButtonTapped');

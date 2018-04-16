@@ -1,8 +1,15 @@
 const { HOST } = require('../constants/host.js');
 
-const token = '';
+
 
 function encapsulateHeaders(headers) {
+  const token = wx.getStorageSync('token');
+
+  if (token) {
+    return Object.assign({}, headers, {
+      Authorization: `Bearer ${token}`
+    })
+  }
   return headers;
 }
 
@@ -44,14 +51,16 @@ function request(options) {
     complete,
     ...restOptions,
   } = options;
+
   const nextOptions = Object.assign({}, {
     url: `${HOST}${url}`,
     success: handleSuccessCallback.bind(options),
     fail: handleFailCallback.bind(options),
     complete: handleCompleteCallback.bind(options),
+    header: encapsulateHeaders(header),
     ...restOptions,
   });
-
+  
   wx.request(nextOptions);
 }
 

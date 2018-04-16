@@ -1,8 +1,17 @@
+<wxs module="utils">
+module.exports.getHouseName = function(houseName) {
+  return houseName && '当前账单房屋：' + houseName
+}
+module.exports.getMonth = function(mth) {
+  return Number(mth.split('-')[1]);
+}
+</wxs>
+
 <view class="{{empty ? 'container' : 'fixed-bottom-container'}}">
   <view class="content">
     <page-title
       title="我的账单"
-      subTitle="当前账单房屋：金域华府 B209"
+      subTitle="{{utils.getHouseName(houseName)}}"
       buttonText="其他房屋账单"
       bind:buttonevent="onButtonTapped"
     />
@@ -20,7 +29,13 @@
 
     <view class="bill-detail" wx:if="{{!empty}}">
       <view class="bill-card">
-        <bill-card />
+        <bill-card
+          month="{{utils.getMonth(mth)}}"
+          date="{{date}}"
+          totalUnpaid="{{totalUnpaid}}"
+          totalExpenses="{{totalExpenses}}"
+          totalPaid="{{totalPaid}}"
+        />
       </view>
 
       <bill-fee-list>
