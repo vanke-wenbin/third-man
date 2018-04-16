@@ -11,8 +11,8 @@ module.exports.getMonth = function(mth) {
   <view class="content">
     <page-title
       title="我的账单"
-      subTitle="{{utils.getHouseName(houseName)}}"
-      buttonText="其他房屋账单"
+      subTitle="{{monthDetail ? '' : utils.getHouseName(houseName)}}"
+      buttonText="{{monthDetail ? '' : '其他房屋账单'}}"
       bind:buttonevent="onButtonTapped"
     />
     <view wx:if="{{empty}}" style="display: flex;flex: 1">
@@ -21,10 +21,18 @@ module.exports.getMonth = function(mth) {
         style="flex: 1"
       />
     </view>
-    <view class="line" wx:if="{{!empty}}"/>
-    <view class="all-bills" wx:if="{{!empty}}">
+    <view class="line" wx:if="{{!monthDetail || isEmpty}}"/>
+    <view class="all-bills" wx:if="{{!monthDetail || isEmpty}}">
       <text class="label">全部账单</text>
-      <text class="text">去看看</text>
+      <view class="btn">
+        <text class="text">{{pashUnpaid ? '仍有 ¥' + pashUnpaid + ' 待缴' : '去看看'}}</text>
+        <icon-custom
+          name="arrow_grey_right"
+          size="14"
+          style="display:flex;align-items:center;"
+        />
+      </view>
+
     </view>
 
     <view class="bill-detail" wx:if="{{!empty}}">

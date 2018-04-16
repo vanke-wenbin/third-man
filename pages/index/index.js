@@ -8,13 +8,16 @@ const STATUS = require('../../constants/status');
 
 Page({
   data: {
-    empty: false,
+    monthDetail: false,
+    isEmpty: false,
     loading: STATUS.DEFAULT,
+    selBills: [],
     mth: timeUtils.formatTimestamp(Date.now(), 'YYYY-MM'),
     date: 0,
     totalUnpaid:0,
     totalExpenses:0,
     totalPaid:0,
+    pashUnpaid: 0,
     bills: [],
     houseName: '',
 
@@ -24,6 +27,7 @@ Page({
     if (option.mth) {
       const [year, month] = option.mth.split('-');
       this.setData({
+        monthDetail: true,
         mth: option.mth,
         date: new Date(year, month, 0).getDate(),
       });
@@ -44,18 +48,22 @@ Page({
   },
 
   getPastBills() {
-    const nowDate = timeUtils.formatTimestamp(Date.now(), 'YYYY-MM');
 
+    if (this.options.mth) {
+      return;
+    }
+    const now = timeUtils.formatTimestamp(Date.now(), 'YYYY-MM');
+    const [year, mth] = now.split('-');
     const url = UrlUtils.getUrlWithQs(api.BILLS_LIST, {
       arrears_only: 0,
-      end_date: nowDate,
-      begin_date: timeUtils.formatTimestamp(Date.now(), 'YYYY-MM'),
+      end_date: now,
+      begin_date: `${year-1}-${mth}`,
     });
 
     HttpHelper.get({
       url,
       success: data => {
-        console.log('success', data);
+        this.setData({pashUnpaid: data.totalUnpaid})
       },
       fail: err => {
         console.log('fail', err);
@@ -64,6 +72,10 @@ Page({
   },
 
   getHouseList() {
+    if (this.options.mth) {
+      return;
+    }
+
     HttpHelper.get({
       url: api.HOUSE_LIST,
       success: data => {
@@ -80,8 +92,8 @@ Page({
   getMthBills() {
     const url = UrlUtils.getUrlWithQs(api.BILLS_LIST, {
       arrears_only: 0,
-      end_date: this.mth,
-      begin_date: this.mth,
+      end_date: this.data.mth,
+      begin_date: this.data.mth,
     });
 
     HttpHelper.get({

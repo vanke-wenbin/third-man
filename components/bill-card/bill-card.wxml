@@ -9,8 +9,8 @@
   <view class="content">
     <view class="current-data">
       <view class="data">
-        <text class="value">{{totalUnpaid}}</text>
-        <text class="label">待缴金额</text>
+        <text class="value">{{totalUnpaid || '本月已缴清'}}</text>
+        <text class="label" wx:if="{{totalUnpaid}}">待缴金额</text>
       </view>
     </view>
     <view class="total-data">

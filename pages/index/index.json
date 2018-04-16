@@ -5,6 +5,7 @@
     "bill-card": "../../components/bill-card/bill-card",
     "empty-list": "../../components/empty-list/empty-list",
     "bill-fee-list": "../../components/bill-fee-list/bill-fee-list",
+    "icon-custom": "../../components/icon-custom/icon-custom",
     "bill-fee-item": "../../components/bill-fee-item/bill-fee-item"
   }
 }

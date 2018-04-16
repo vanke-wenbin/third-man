@@ -5,11 +5,6 @@
   background-color: rgba(69, 69, 69, .1);
 }
 
-
-.bill-detail {
-  margin-top: 20px;
-}
-
 .bill-card {
   padding: 20px 20px 0;
   background-color: #fff;
@@ -19,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
   padding: 20px;
   background-color: #fff;
 }
@@ -27,7 +23,8 @@
   font-size: 16px;
   font-weight: 600;
 }
-.all-bills .text {
+.all-bills .btn {
+  display: flex;
   color: #909090;
   font-size: 14px;
 }
