@@ -15,7 +15,7 @@ Page({
     totalUnpaid:0,
     totalExpenses:0,
     totalPaid:0,
-    costs: [],
+    bills: [],
     houseName: '',
 
   },
@@ -68,9 +68,12 @@ Page({
       url: api.HOUSE_LIST,
       success: data => {
         const mainHouse = data.filter(house => house.is_main);
-        const houseName = mainHouse[0].name;
+        const houseName = mainHouse[0] && mainHouse[0].name;
         this.setData({ houseName });
       },
+      fail: err => {
+        console.log('getHouseList fail', err);
+      }
     });
   },
 
@@ -84,14 +87,32 @@ Page({
     HttpHelper.get({
       url,
       success: data => {
-        const { costs, totalUnpaid, totalExpenses } = data.bis[0];
-        const totalPaid = costs.reduce((total, v) => total + v.paid, 0);
-        // this.setData
-        console.log(totalUnpaid, totalExpenses, totalPaid);
-        this.setData({totalUnpaid, totalExpenses, totalPaid})
+        const { bis, totalUnpaid } = data;
+        const totalPaid = bis.reduce(
+          (total, bill) => total + bill.costs.reduce(
+            (costsTotal, v) => costsTotal + v.paid,0
+          ),
+          0
+         );
+        const totalExpenses = (bis.reduce((total, v) => total + v.totalExpenses * 100, 0)) / 100;
+        const formatBills = bis.map(bill => {
+          if (bill.order_id === 0) {
+            return {
+              billName: '物业服务费',
+              ...bill,
+            }
+          } else {
+            return {
+              billName: bill.costs[0].expenseName,
+              ...bill,
+            }
+          }
+        })
+
+        this.setData({totalUnpaid, totalExpenses, totalPaid, bills: formatBills});
       },
       fail: err => {
-        console.log('fail', err);
+        console.log('getMthBills fail', err);
       }
     });
   },

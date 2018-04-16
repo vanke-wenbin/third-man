@@ -38,7 +38,7 @@ module.exports.getMonth = function(mth) {
         />
       </view>
 
-      <bill-fee-list>
+      <bill-fee-list data="{{bills}}">
         <bill-fee-item />
       </bill-fee-list>
     </view>

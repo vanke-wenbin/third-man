@@ -2,10 +2,10 @@
   <view class="main-item">
     <check-item>
       <view class="item" bindtap="onItemTapped">
-        <text class="label">{{data.name}}</text>
-        <block wx:if="{{!data.details && data.amount}}">
+        <text class="label">{{data.billName}}</text>
+        <block wx:if="{{!data.costs && data.totalUnpaid}}">
           <view class="data">
-            <text class="amount">¥ {{data.amount}}</text>
+            <text class="amount">¥ {{data.totalUnpaid}}</text>
             <block wx:if="{{!data.isPaid}}">
               <text class="not-pay">待缴</text>
             </block>
@@ -14,17 +14,18 @@
       </view>
     </check-item>
   </view>
-  <block wx:if="{{data.details}}">
+  <block wx:if="{{data.costs}}">
     <view
-      wx:for="{{data.details}}"
+      wx:for="{{data.costs}}"
       wx:for-item="detail"
       wx:key="{{detail.name}}"
       class="sub-item"
     >
       <view class="item" bindtap="onItemTapped">
-        <text class="label">· {{detail.name}}</text>
+        <text class="label">· {{detail.expenseName}}</text>
         <view class="data">
-          <text class="amount">¥ {{detail.amount}}</text>
+          <text class="amount">¥ {{detail.unpaid}}</text>
+          <text class="not-pay">待缴</text>
         </view>
       </view>
     </view>

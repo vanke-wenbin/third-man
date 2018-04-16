@@ -3,7 +3,7 @@ Component({
     '../bill-fee-list/bill-fee-list': {
       type: 'parent',
       linked: function(target) {
-        console.log('item linked', target);
+        // console.log('item linked', target);
       },
     },
   },
