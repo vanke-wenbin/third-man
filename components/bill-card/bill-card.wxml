@@ -1,25 +1,25 @@
 <view class="bill-card">
   <view class="header">
     <view class="label">
-      <text class="main-label">11月账单</text>
-      <text class="sub-label">11/01-11/30</text>
+      <text class="main-label">{{month}}月账单</text>
+      <text class="sub-label">{{month}}/01-{{month}}/{{date}}</text>
     </view>
     <text class="unit">单位：元</text>
   </view>
   <view class="content">
     <view class="current-data">
       <view class="data">
-        <text class="value">1333.73</text>
+        <text class="value">{{totalUnpaid}}</text>
         <text class="label">待缴金额</text>
       </view>
     </view>
     <view class="total-data">
       <view class="data">
-        <text class="value">2874.73</text>
+        <text class="value">{{totalExpenses}}</text>
         <text class="label">账单总金额</text>
       </view>
       <view class="data">
-        <text class="value">1541.00</text>
+        <text class="value">{{totalPaid}}</text>
         <text class="label">已缴金额</text>
       </view>
     </view>
