@@ -26,11 +26,13 @@ function handleSuccessCallback(data, statusCode, header) {
       icon: 'none',
       duration: 2000
     });
+    console.log('失败接口'.padStart(10, '-'), this.url);
     fail && fail({error, result, message}, data);
   }
 }
 
 function handleFailCallback(resp) {
+  console.log('失败接口'.padStart(10, '-'), this.url);
   this.fail && this.fail(resp);
 }
 
@@ -61,6 +63,10 @@ function request(options) {
     ...restOptions,
   });
   
+  if (!options.customLoading) {
+    wx.showLoading();
+  }
+
   wx.request(nextOptions);
 }
 
@@ -74,6 +80,12 @@ module.exports = {
   post(options) {
     request(Object.assign({}, {
       method: 'POST',
+    }, options));
+  },
+
+  put(options) {
+    request(Object.assign({}, {
+      method: 'PUT',
     }, options));
   },
 

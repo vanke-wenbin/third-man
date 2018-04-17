@@ -1,5 +1,8 @@
+const ZHUZHER = '/api/zhuzher';
+const FD = '/fd/api';
 module.exports = {
-  LOGIN: '/fd/api/sns/callback',
-  BILLS_LIST: '/api/zhuzher/yz/bills',
-  HOUSE_LIST: '/api/zhuzher/users/me/houses'
+  LOGIN: `${FD}/sns/callback`,
+  BILLS_LIST: `${ZHUZHER}/yz/bills`,
+  HOUSE_LIST: `${ZHUZHER}/users/me/houses`,
+  CHANGE_HOUSE: `${ZHUZHER}/users/me/houses/main`
 };

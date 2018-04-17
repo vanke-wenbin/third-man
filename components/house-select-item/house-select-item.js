@@ -8,10 +8,13 @@ Component({
     }
   },
 
-  data: {
-
-  },
-
   methods: {
+    onItemTap(e) {
+      const eventDetail = {
+        code: e.currentTarget.dataset.code,
+      };
+
+      this.triggerEvent('onItemTap', eventDetail);
+    }
   },
 })

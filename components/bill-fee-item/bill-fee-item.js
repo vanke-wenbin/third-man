@@ -11,9 +11,6 @@ Component({
     data: Object,
   },
 
-  data: {
-  },
-
   methods: {
     onItemTapped: function() {
       if (!this.properties.data.totalUnpaid) {

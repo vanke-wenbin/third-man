@@ -10,6 +10,9 @@ Component({
 
 
   methods: {
+    onItemTap(e) {
+      this.triggerEvent('onItemTap', { code: e.detail.code });
+    }
   },
 
 })

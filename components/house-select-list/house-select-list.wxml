@@ -3,5 +3,6 @@
     wx:for="{{data}}"
     wx:key="{{item}}"
     data="{{item}}"
+    bind:onItemTap="onItemTap"
   />
 </view>

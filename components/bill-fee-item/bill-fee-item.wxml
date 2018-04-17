@@ -1,10 +1,13 @@
-<view class="{{'bill-fee-item ' + (data.totalUnpaid === 0 ? 'bill-fee-item-paid' : '')}}">
+<view
+ bindtap="onItemTapped"
+ class="{{'bill-fee-item ' + (data.totalUnpaid === 0 ? 'bill-fee-item-paid' : '')}}"
+>
   <view class="main-item">
       <check-item
         select="{{data.isSelected}}"
         disable="{{!data.totalUnpaid}}"
       >
-      <view class="item" bindtap="onItemTapped">
+      <view class="item" >
         <text class="label">{{data.billName}}</text>
         <block wx:if="{{data.costs.length === 0}}">
           <view class="data">
@@ -24,7 +27,7 @@
       wx:key="{{detail.name}}"
       class="sub-item"
     >
-      <view class="{{'item ' + (detail.unpaid === 0 ? 'item-paid' : '')}}" bindtap="onItemTapped">
+      <view class="{{'item ' + (detail.unpaid === 0 ? 'item-paid' : '')}}">
         <text class="label">· {{detail.expenseName}}</text>
         <view class="data">
           <text class="amount">¥ {{detail.unpaid || detail.expenses}}</text>

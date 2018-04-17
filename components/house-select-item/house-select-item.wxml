@@ -23,7 +23,7 @@ module.exports.getClassName = function(identity) {
 </wxs>
 
 
-<view class="house-select-item">
+<view class="house-select-item" bindtap="onItemTap" data-code="{{data.code}}">
   <view class="left">
     <view
       class="identity {{identity.getClassName(data.identity)}}"

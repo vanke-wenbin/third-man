@@ -11,7 +11,7 @@ Page({
     monthDetail: false,
     isEmpty: false,
     loading: STATUS.DEFAULT,
-    selBills: [],
+    hasSelected: false,
     mth: timeUtils.formatTimestamp(Date.now(), 'YYYY-MM'),
     date: 0,
     totalUnpaid:0,
@@ -39,7 +39,6 @@ Page({
     }
 
   },
-
 
   onReady() {
 
@@ -133,9 +132,10 @@ Page({
       }
     });
   },
+
   onBillItemClick(e) {
     const { detail: { id }} = e;
-    const newBills = this.data.bills.map(bill => {
+    const bills = this.data.bills.map(bill => {
       if (bill.order_id === id) {
         return {
           ...bill,
@@ -144,9 +144,14 @@ Page({
       }
       return bill;
     });
-    this.setData({ bills: newBills });
+    const hasSelected = bills.some(bill => bill.isSelected);
+    this.setData({
+      bills,
+      hasSelected,
+    });
   },
-  onButtonTapped: function() {
-    console.log('onButtonTapped');
+
+  onToHouseList: function() {
+    wx.navigateTo({ url: '../house-select/house-select' });
   }
 })

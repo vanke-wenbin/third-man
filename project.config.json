@@ -41,8 +41,7 @@
 				{
 					"id": -1,
 					"name": "我的账单",
-					"pathName": "pages/index/index",
-					"query": "mth=2018-03"
+					"pathName": "pages/index/index"
 				}
 			]
 		}
