@@ -41,7 +41,7 @@
 				{
 					"id": -1,
 					"name": "我的账单",
-					"pathName": "pages/index/index"
+					"pathName": "pages/bill-list/bill-list"
 				}
 			]
 		}

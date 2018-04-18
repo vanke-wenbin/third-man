@@ -1,0 +1,4 @@
+<view class="bill-mth-list">
+  <view wx:if="{{title}}" class="title">{{title}}</view>
+  <view class="content"><slot /></view>
+</view>

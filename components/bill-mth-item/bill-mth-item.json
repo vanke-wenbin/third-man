@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "check-item": "../check-item/check-item",
+    "icon-custom": "../icon-custom/icon-custom"
+  }
+}

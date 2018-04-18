@@ -3,8 +3,8 @@
     "page-title": "../../components/page-title/page-title",
     "empty-list": "../../components/empty-list/empty-list",
     "check-item": "../../components/check-item/check-item",
-    "list": "../../components/list/list",
-    "list-item": "../../components/list-item/list-item",
+    "bill-mth-list": "../../components/bill-mth-list/bill-mth-list",
+    "bill-mth-item": "../../components/bill-mth-item/bill-mth-item",
     "icon-custom": "../../components/icon-custom/icon-custom"
   }
 }

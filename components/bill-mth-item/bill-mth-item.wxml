@@ -1,0 +1,22 @@
+<view
+ class="bill-mth-item {{!totalUnpaid ? 'bill-mth-item-disable' : ''}}"
+>
+    <check-item
+      select="{{isSelected}}"
+      disable="{{!totalUnpaid}}"
+      bindtap="onItemTapped"
+    >
+    <view class="item" >
+      <text class="label" bindtap="onItemTapped">{{label}}</text>
+      <view class="right">
+        <view class="data">
+          <view class="amount">¥ {{totalExpenses}}</view>
+          <block wx:if="{{totalUnpaid}}">
+            <text class="not-pay">¥{{totalUnpaid}}待缴</text>
+          </block>
+        </view>
+        <icon-custom name="arrow_grey_right" size="14"/>
+      </view>
+    </view>
+  </check-item>
+</view>

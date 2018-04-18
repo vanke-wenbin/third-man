@@ -1,0 +1,42 @@
+.bill-mth-item {
+  color: #454545;
+}
+
+
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  height: 56px;
+  border-bottom: 1px solid #ececec;
+}
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label {
+  font-size: 16px;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.amount {
+  font-size: 16px;
+  line-height: 16px;
+  color: #909090;
+}
+.not-pay {
+  margin-top: 5px;
+  color: #ef7c79;
+  line-height: 12px;
+  font-size: 12px;
+}
+.bill-mth-item-disable .label,
+.bill-mth-item-disable .amount {
+  color: #c9c9c9;
+}

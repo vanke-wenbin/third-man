@@ -1,35 +1,33 @@
+<wxs module="utils">
+module.exports.getMth = function(date) {
+  return Number(date.split('-')[1]);
+}
+</wxs>
+
 <view
   class="bill-list {{bills.length !== 0 ? 'fixed-bottom-container' : 'container'}}"
 >
   <view class="content">
     <page-title title="全部账单" style="background-color:#fff;"/>
-    <view
+    <block
       wx:for="{{bills}}"
       wx:for-item="year"
       wx:key="bill-list"
     >
-      <list title="{{year.title}}年">
-        <view
+      <bill-mth-list title="{{year.title}}年">
+        <block
           wx:for="{{year.data}}"
           wx:key="bill-list-item"
         >
-          <check-item
-            select="{{item.selected}}"
-            disable="{{item.unpaid > 0}}"
-            checkBoxValue="{{item.mth}}"
-            bind:boxChange="boxChange"
-          >
-            <list-item
-              style="flex:1"
-              label="{{item.mth}}月份账单"
-              data="¥ {{item.expenses}}"
-              last="{{index === year.data.length - 1}}"
-            />
-          </check-item>
-        </view>
-
-      </list>
-    </view>
+          <bill-mth-item
+            label="{{utils.getMth(item.mth)}}月份账单"
+            totalUnpaid="{{item.totalUnpaid}}"
+            totalExpenses="{{item.totalExpenses}}"
+            isSelected="{{item.isSelected}}"
+          />
+        </block>
+      </bill-mth-list>
+    </block>
     <view wx:if="{{bills.length === 0}}" style="display: flex;flex: 1">
       <empty-list
         text="暂无往期账单"

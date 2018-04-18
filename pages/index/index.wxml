@@ -25,7 +25,7 @@ module.exports.getMonth = function(mth) {
     <view class="line" wx:if="{{!monthDetail || isEmpty}}"/>
     <view class="all-bills" wx:if="{{!monthDetail || isEmpty}}">
       <text class="label">全部账单</text>
-      <view class="btn">
+      <view class="btn" bindtap="onToMonthBills">
         <text class="text">{{pashUnpaid ? '仍有 ¥' + pashUnpaid + ' 待缴' : '去看看'}}</text>
         <icon-custom
           name="arrow_grey_right"

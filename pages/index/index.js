@@ -1,5 +1,3 @@
-//index.js
-//获取应用实例
 const timeUtils = require('../../utils/time');
 const UrlUtils = require('../../utils/url.js');
 const HttpHelper = require('../../helpers/http.js');
@@ -151,7 +149,11 @@ Page({
     });
   },
 
-  onToHouseList: function() {
+  onToHouseList() {
     wx.navigateTo({ url: '../house-select/house-select' });
+  },
+
+  onToMonthBills() {
+    wx.navigateTo({ url: '../bill-list/bill-list' });
   }
 })
