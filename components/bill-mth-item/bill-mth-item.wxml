@@ -4,11 +4,11 @@
     <check-item
       select="{{isSelected}}"
       disable="{{!totalUnpaid}}"
-      bindtap="onItemTapped"
+      bind:boxChange="onItemTapped"
     >
     <view class="item" >
-      <text class="label" bindtap="onItemTapped">{{label}}</text>
-      <view class="right">
+      <text class="label" bindtap="onItemTapped" >{{label}}</text>
+      <view class="right" bindtap="onToBillDetail" >
         <view class="data">
           <view class="amount">¥ {{totalExpenses}}</view>
           <block wx:if="{{totalUnpaid}}">

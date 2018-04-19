@@ -35,7 +35,7 @@ Page({
     HttpHelper.put({
       url: api.CHANGE_HOUSE,
       data: {
-        code
+        house_code: code,
       },
       success: data => {
         wx.reLaunch({

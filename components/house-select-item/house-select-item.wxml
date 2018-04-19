@@ -1,24 +1,28 @@
 <wxs module="identity">
-var identityCfg = {
-  '0': {
-    className: 'identity-owner',
-    title: '业主'
-  },
-  '1': {
-    className: 'identity-family',
-    title: '家属'
-  },
-  '2': {
-    className: 'identity-tenant',
-    title: '租户'
-  }
-};
-
 module.exports.getTitle = function(identity) {
-  return identityCfg[identity] && identityCfg[identity].title;
+  switch (identity) {
+    case 0:
+      return '业主';
+    case 1:
+      return '家属';
+    case 2:
+      return '租户';
+    default:
+      return '游客'
+  }
 }
 module.exports.getClassName = function(identity) {
-  return identityCfg[identity] && identityCfg[identity].className;
+
+  switch (identity) {
+    case 0:
+      return 'identity-owner';
+    case 1:
+      return 'identity-family';
+    case 2:
+      return 'identity-tenant';
+    default:
+      return 'identity-tourist'
+  }
 }
 </wxs>
 

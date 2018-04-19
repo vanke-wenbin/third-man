@@ -27,7 +27,12 @@ App({
         this.getFdTokenSucc(data);
       },
       fail: err => {
-        this.getFdTokenWithInfo();
+        wx.login({
+          success: res => {
+            wx.setStorageSync('code', res.code);
+            this.getFdTokenWithInfo();
+          },
+        });
       }
     });
   },
@@ -58,6 +63,9 @@ App({
   },
   getFdTokenSucc(data) {
     wx.setStorageSync('token', data.access_token);
+    wx.navigateTo({
+      url: '../index/index'
+    });
   },
   globalData: {
     userInfo: null

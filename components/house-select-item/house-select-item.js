@@ -3,8 +3,10 @@ Component({
 
   properties: {
     data:{
-      type: Array,
-      value: []
+      type: Object,
+      value: {
+        identity: 0,
+      }
     }
   },
 

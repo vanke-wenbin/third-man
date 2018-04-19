@@ -30,18 +30,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
-					"name": "确认账单",
-					"pathName": "pages/bill/bill-confirm",
+					"name": "登录页面",
+					"pathName": "pages/index/index",
 					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的账单",
-					"pathName": "pages/bill-list/bill-list"
 				}
 			]
 		}

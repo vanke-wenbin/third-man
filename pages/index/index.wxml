@@ -8,7 +8,7 @@ module.exports.getMonth = function(mth) {
 
 </wxs>
 
-<view class="{{empty ? 'container' : 'fixed-bottom-container'}}">
+<view class="{{isEmpty ? 'container' : 'fixed-bottom-container'}}">
   <view class="content">
     <page-title
       title="我的账单"
@@ -16,14 +16,14 @@ module.exports.getMonth = function(mth) {
       buttonText="{{monthDetail ? '' : '其他房屋账单'}}"
       bind:buttonevent="onToHouseList"
     />
-    <view wx:if="{{empty}}" style="display: flex;flex: 1">
+    <view wx:if="{{isEmpty}}" style="display: flex;flex: 1">
       <empty-list
         text="暂无账单"
         style="flex: 1"
       />
     </view>
-    <view class="line" wx:if="{{!monthDetail || isEmpty}}"/>
-    <view class="all-bills" wx:if="{{!monthDetail || isEmpty}}">
+    <view class="line" wx:if="{{!isEmpty && !!monthDetail}}"/>
+    <view class="all-bills" wx:if="{{!monthDetail && !isEmpty}}">
       <text class="label">全部账单</text>
       <view class="btn" bindtap="onToMonthBills">
         <text class="text">{{pashUnpaid ? '仍有 ¥' + pashUnpaid + ' 待缴' : '去看看'}}</text>
@@ -36,7 +36,7 @@ module.exports.getMonth = function(mth) {
 
     </view>
 
-    <view class="bill-detail" wx:if="{{!empty}}">
+    <view class="bill-detail" wx:if="{{!isEmpty}}">
       <view class="bill-card">
         <bill-card
           month="{{utils.getMonth(mth)}}"
@@ -50,7 +50,7 @@ module.exports.getMonth = function(mth) {
       <bill-fee-list data="{{bills}}" bind:onItemClick="onBillItemClick"/>
     </view>
   </view>
-  <view class="bottom-bar" wx:if="{{!empty}}">
+  <view class="bottom-bar" wx:if="{{!isEmpty}}">
     <button
       type="primary"
       disabled="{{!hasSelected}}"

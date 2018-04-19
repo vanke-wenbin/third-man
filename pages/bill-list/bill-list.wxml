@@ -21,9 +21,12 @@ module.exports.getMth = function(date) {
         >
           <bill-mth-item
             label="{{utils.getMth(item.mth)}}月份账单"
+            mth="{{item.mth}}"
             totalUnpaid="{{item.totalUnpaid}}"
             totalExpenses="{{item.totalExpenses}}"
             isSelected="{{item.isSelected}}"
+            bind:onItemSelect = "onItemSelect"
+            bind:toBillDetail = "toBillDetail"
           />
         </block>
       </bill-mth-list>
@@ -34,7 +37,7 @@ module.exports.getMth = function(date) {
         style="flex: 1"
       />
     </view>
-    <view wx:else class="bill-list-no-more">
+    <view wx:if="{{!hasMore}}" class="bill-list-no-more">
       <text>- 没有更多记录了 -</text>
     </view>
   </view>

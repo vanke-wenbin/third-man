@@ -40,7 +40,7 @@ Page({
 
   onReady() {
 
-    this.getMthBills();
+    this.getCurrentBills();
     this.getHouseList();
     this.getPastBills();
   },
@@ -89,7 +89,7 @@ Page({
     });
   },
 
-  getMthBills() {
+  getCurrentBills() {
     const url = UrlUtils.getUrlWithQs(api.BILLS_LIST, {
       arrears_only: 0,
       end_date: this.data.mth,
@@ -100,6 +100,10 @@ Page({
       url,
       success: data => {
         const { bis, totalUnpaid } = data;
+        if (bis.length === 0) {
+          this.setData({isEmpty: true});
+          return;
+        }
         const totalPaid = bis.reduce(
           (total, bill) => total + bill.costs.reduce(
             (costsTotal, v) => costsTotal + v.paid,0
@@ -126,7 +130,7 @@ Page({
         this.setData({totalUnpaid, totalExpenses, totalPaid, bills: formatBills});
       },
       fail: err => {
-        console.log('getMthBills fail', err);
+        console.log('getCurrentBills fail', err);
       }
     });
   },
